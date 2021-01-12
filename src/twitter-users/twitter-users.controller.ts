@@ -1,5 +1,5 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
-import { AddTwitterUserDto } from './dto/addTwitterUserDto';
+import { Body, Controller, Post } from '@nestjs/common';
+import { AddTwitterUserDto } from './dto/twitterUserDto';
 import { TwitterUsersService } from './twitter-users.service';
 
 @Controller('twitter-users')

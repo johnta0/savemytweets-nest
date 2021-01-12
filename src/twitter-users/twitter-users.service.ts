@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as Twitter from 'twitter';
 import { Repository } from 'typeorm';
-import { AddTwitterUserDto } from './dto/addTwitterUserDto';
+import { AddTwitterUserDto } from './dto/twitterUserDto';
 import { TwitterUser } from './twitter-user.entity';
 
 @Injectable()

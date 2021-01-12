@@ -8,6 +8,6 @@ import { TwitterUsersService } from './twitter-users.service';
 	imports: [TypeOrmModule.forFeature([TwitterUser])],
 	providers: [TwitterUsersService],
 	controllers: [TwitterUsersController],
-	exports: [TwitterUsersModule]
+	exports: [TwitterUsersService]
 })
 export class TwitterUsersModule {}

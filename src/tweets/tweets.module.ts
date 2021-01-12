@@ -8,5 +8,6 @@ import { TweetsService } from './tweets.service';
   imports: [TypeOrmModule.forFeature([Tweet])],
   controllers: [TweetsController],
   providers: [TweetsService],
+  exports: [TweetsService]
 })
 export class TweetsModule {}

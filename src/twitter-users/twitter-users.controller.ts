@@ -9,6 +9,6 @@ export class TwitterUsersController {
 	@Post('add')
 	async addTwitterUser(@Body() addTwitterUserDto: AddTwitterUserDto) {
 		// add a record and a new table
-		
+		return this.twitterUsersService.addTwitterUser(addTwitterUserDto);
 	}
 }

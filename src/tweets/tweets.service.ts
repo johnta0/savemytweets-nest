@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as Twitter from 'twitter'
-import { Response } from 'request';
+// import { Response } from 'request';
 
 @Injectable()
 export class TweetsService {
@@ -17,13 +17,17 @@ export class TweetsService {
 
 	// get user tweets by GET statuses/user_timeline
 	// https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/api-reference/get-statuses-user_timeline
-	async getUserTimeline(screen_name: string, maxId?: number): Promise<any> {
+	async getUserTimeline(screenName: string, maxId?: number): Promise<any> {
 		const params = {
-			screen_name: screen_name,
+			screen_name: screenName,
 			count: 200,
 			// max_id: 54321, // Returns results with an ID less than (that is, older than) or equal to the specified ID.
 		};
 		if (maxId) { params['max_id'] = maxId; }
-		return await this.client.get('/statuses/user_timeline', params);
+		try {
+			return await this.client.get('/statuses/user_timeline', params);
+		} catch (e) {
+			return { errorMessage: e }
+		}
 	}
 }

@@ -4,13 +4,13 @@ import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Tweet {
 
-	@PrimaryColumn()
+	@PrimaryColumn({ nullable: false })
 	tweetId: number;
 
-	@PrimaryColumn()
+	@PrimaryColumn({ nullable: false })
 	tweetIdStr: string;
 
-	@Column()
+	@Column({ nullable: false })
 	tweetedAt: Date;
 
 	@Column({ nullable: false, length: 200 })

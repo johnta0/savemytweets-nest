@@ -1,11 +1,14 @@
 import { Tweet } from "src/tweets/tweet.entity";
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class TwitterUser {
 
 	@PrimaryColumn()
 	twitterUserId: string;
+
+	@CreateDateColumn()
+	createdAt: Date;
 
 	@Column()
 	screenName: string;
